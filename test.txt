@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 Hier ist mein Test, ob die Veränderung sehen kannst.
+=======
+dwa
+>>>>>>> c01319458375a4f317f07bd3a43c85aed30cf6f9
