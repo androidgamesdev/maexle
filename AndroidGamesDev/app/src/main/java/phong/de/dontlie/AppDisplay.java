@@ -12,6 +12,6 @@ public class AppDisplay extends AppCompatActivity {
         setContentView(R.layout.activity_app_display);
 
         ImageView logo = (ImageView) findViewById(R.id.logo);
-        logo.setImageResource(R.drawable.logoApp);
+        logo.setImageResource(R.drawable.logo);
     }
 }
