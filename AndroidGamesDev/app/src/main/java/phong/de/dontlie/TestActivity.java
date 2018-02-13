@@ -5,5 +5,5 @@ package phong.de.dontlie;
  */
 
 public class TestActivity {
-    //zum testen von Git
+    //zum testen von Git, was soll der Schwachsinn
 }
