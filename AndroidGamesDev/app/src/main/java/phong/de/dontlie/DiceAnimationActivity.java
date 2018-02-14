@@ -30,7 +30,7 @@ public class DiceAnimationActivity extends AppCompatActivity implements View.OnC
         imageView1 = (ImageView) findViewById(R.id.imageView1);
         imageView2 = (ImageView) findViewById(R.id.imageView2);
         imageView3 = (ImageView) findViewById(R.id.imageView3);
-        
+
         rollDiceButton.setOnClickListener(this);
     }
 

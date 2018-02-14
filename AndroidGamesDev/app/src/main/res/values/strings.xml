@@ -24,4 +24,32 @@
         augue velit cursus nunc</string>
     <string name="security">Das nachfolgende Trinkspiel ist nicht für
         Leute ohne Alkohol geeignet.</string>
+    <string name="game_description">Ziel:\nMan versucht, als letzter Spieler
+        noch über Würfel zu verfügen. Jeder Spieler besitzt zu Beginn drei
+        Würfel. Nun würfeln alle Spieler gleichzeitig und schauen sich
+        danach heimlich den eigenen Wurf an. Der Startspieler (irgendjemand
+        zufälliges) sagt ein Ergebnis an, von dem er glaubt, dass es bei allen
+        Spielern insgesamt vorhanden ist. Dabei zählen die eigenen Würfel
+        ebenfalls. Danach ist der nächstfolgende Spieler an der Reihe, der
+        entweder das Genannte anzweifeln kann oder es akzeptiert. Glaubt man
+        dem vorherigen Spieler, dann muss man nun selbst ein Gebot abgeben,
+        welches höher ist als das vorangegangene. Dies bedeutet entweder, dass
+        man die Anzahl der genannten Ziffer erhöht (zB. von 2 x 1er auf 3 x 1er)
+        oder die Anzahl der Würfel beibehält, aber die Ziffer im Wert erhöht
+        (zB. 2 x 1er auf 2 x 2er). Natürlich kann man auch beides kombinieren.
+        Oder man geht auf Risiko und nennt eine genaue Anzahl der Ziffer- und
+        der dazugehörigen Würfelanzahl (zB. "Es sind genau 5 x 5er im Umlauf").
+        Irgendwann glaubt ein Spieler seinem Vorgänger nicht mehr, was dieser
+        sagt und zweifelt dies an. Dann werden alle Becher aufgedeckt und das
+        Ergebnis verglichen. Konnte das genannte Ergebnis nicht erreicht werden,
+        muss der Spieler, der das Gebot genannt hat, ein Würfel weglegen und
+        einen dicken Schluck aus seinem Glas nehmen. Befinden sich jedoch
+        ausreichend Würfel in der genannten Konstellation auf dem Tisch oder
+        sind es sogar mehr, dann verliert der Zweifler einen Würfel und er muss
+        einen dicken Schluck aus seinem Glas nehmen. Bei einem genauen Gebot
+        muss dann entweder der Verlierer oder der Gewinner seinen Becher auf
+        Ex trinken. Die Runde fängt dann beim letzten Spieler wieder von vorne
+        an.\nSobald ein Spieler keine Würfel mehr besitzt, muss er Shots gleich
+        der Anzahl seiner Platzierung trinken (zB. 4ter muss 4 Shots trinken usw.).
+    </string>
 </resources>

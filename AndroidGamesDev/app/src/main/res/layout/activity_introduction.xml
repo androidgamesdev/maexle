@@ -31,7 +31,7 @@
                 android:id="@+id/dummyText"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="@string/dummy_text" />
+                android:text="@string/game_description" />
 
         </ScrollView>
 
