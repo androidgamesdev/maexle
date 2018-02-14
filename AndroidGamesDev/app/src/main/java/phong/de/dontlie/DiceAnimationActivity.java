@@ -10,11 +10,15 @@ import android.widget.ImageView;
 
 import java.util.Random;
 
-public class DiceAnimationActivity extends AppCompatActivity implements View.OnClickListener {
+public class DiceAnimationActivity extends AppCompatActivity implements View.OnClickListener{
 
     public static final Random RANDOM = new Random();
     private Button rollDiceButton;
     private ImageView imageView1, imageView2;
+
+    public static int randomDiceValue() {
+        return RANDOM.nextInt(6) + 1;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,17 +30,13 @@ public class DiceAnimationActivity extends AppCompatActivity implements View.OnC
         imageView1 = (ImageView) findViewById(R.id.imageView1);
         imageView2 = (ImageView) findViewById(R.id.imageView2);
 
-        rollDiceButton.setOnClickListener(this);
-    }
-
-    @Override
-    public void onClick(View view) {
-        switch (view.getId()) {
-            case R.id.rollDice:
+        rollDiceButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
                 final Animation anim1 = AnimationUtils.loadAnimation(DiceAnimationActivity.this, R.anim.shake);
                 final Animation anim2 = AnimationUtils.loadAnimation(DiceAnimationActivity.this, R.anim.shake);
 
-                final Animation.AnimationListener animationListener = new Animation.AnimationListener() {
+                final Animation.AnimationListener animationListener= new Animation.AnimationListener() {
                     @Override
                     public void onAnimationStart(Animation animation) {
 
@@ -45,7 +45,7 @@ public class DiceAnimationActivity extends AppCompatActivity implements View.OnC
                     @Override
                     public void onAnimationEnd(Animation animation) {
                         int value = randomDiceValue();
-                        int res = getResources().getIdentifier("dice_" + value, "drawable", "phong.de.dontlie");
+                        int res = getResources().getIdentifier("dice_" +  value, "drawable", "phong.de.dontlie");
 
                         if (animation == anim1) {
                             imageView1.setImageResource(res);
@@ -61,10 +61,19 @@ public class DiceAnimationActivity extends AppCompatActivity implements View.OnC
 
                     }
                 };
-        }
+
+                anim1.setAnimationListener(animationListener);
+                anim2.setAnimationListener(animationListener);
+
+                imageView1.startAnimation(anim1);
+                imageView1.startAnimation(anim2);
+            }
+        });
+
     }
 
-    public static int randomDiceValue() {
-        return RANDOM.nextInt(6) + 1;
+    @Override
+    public void onClick(View view) {
+
     }
 }
