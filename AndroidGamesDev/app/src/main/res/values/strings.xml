@@ -22,4 +22,6 @@
         tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec
         sodales sagittis magna. Sed consequat, leo eget bibendum sodales,
         augue velit cursus nunc</string>
+    <string name="security">Das nachfolgende Trinkspiel ist nicht für
+        Leute ohne Alkohol geeignet.</string>
 </resources>
