@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+import me.anwarshahriar.calligrapher.Calligrapher;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -13,5 +15,8 @@ public class MainActivity extends AppCompatActivity {
 
         Intent intent = new Intent(this, DiceAnimationActivity.class);
         startActivity(intent);
+
+        Calligrapher calligrapher = new Calligrapher(this);
+        calligrapher.setFont(this, "fonts/Montserrat-Regular.otf", true);
     }
 }

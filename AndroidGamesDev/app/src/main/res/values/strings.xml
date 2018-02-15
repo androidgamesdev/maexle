@@ -31,14 +31,14 @@
         zufälliges) sagt ein Ergebnis an, von dem er glaubt, dass es bei allen
         Spielern insgesamt vorhanden ist. Dabei zählen die eigenen Würfel
         ebenfalls. Danach ist der nächstfolgende Spieler an der Reihe, der
-        entweder das Genannte anzweifeln kann oder es akzeptiert. Glaubt man
+        entweder das Genannte anzweifeln kann oder es akzeptiert. \nGlaubt man
         dem vorherigen Spieler, dann muss man nun selbst ein Gebot abgeben,
         welches höher ist als das vorangegangene. Dies bedeutet entweder, dass
         man die Anzahl der genannten Ziffer erhöht (zB. von 2 x 1er auf 3 x 1er)
         oder die Anzahl der Würfel beibehält, aber die Ziffer im Wert erhöht
         (zB. 2 x 1er auf 2 x 2er). Natürlich kann man auch beides kombinieren.
         Oder man geht auf Risiko und nennt eine genaue Anzahl der Ziffer- und
-        der dazugehörigen Würfelanzahl (zB. "Es sind genau 5 x 5er im Umlauf").
+        der dazugehörigen Würfelanzahl (zB. "Es sind genau 5 x 5er im Umlauf").\n
         Irgendwann glaubt ein Spieler seinem Vorgänger nicht mehr, was dieser
         sagt und zweifelt dies an. Dann werden alle Becher aufgedeckt und das
         Ergebnis verglichen. Konnte das genannte Ergebnis nicht erreicht werden,

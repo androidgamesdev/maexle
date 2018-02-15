@@ -8,12 +8,17 @@ import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
+import me.anwarshahriar.calligrapher.Calligrapher;
+
 public class AppDisplay extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_app_display);
+
+        Calligrapher calligrapher = new Calligrapher(this);
+        calligrapher.setFont(this, "fonts/Montserrat-Regular.otf", true);
 
         ImageView logo = (ImageView) findViewById(R.id.logo);
         logo.setImageResource(R.drawable.logo);

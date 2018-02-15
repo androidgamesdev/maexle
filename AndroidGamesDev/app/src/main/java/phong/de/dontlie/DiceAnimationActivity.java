@@ -10,6 +10,8 @@ import android.widget.ImageView;
 
 import java.util.Random;
 
+import me.anwarshahriar.calligrapher.Calligrapher;
+
 public class DiceAnimationActivity extends AppCompatActivity implements View.OnClickListener {
 
     public static final Random RANDOM = new Random();
@@ -24,6 +26,9 @@ public class DiceAnimationActivity extends AppCompatActivity implements View.OnC
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dice_animation);
+
+        Calligrapher calligrapher = new Calligrapher(this);
+        calligrapher.setFont(this, "fonts/Montserrat-Regular.otf", true);
 
         rollDiceButton = (Button) findViewById(R.id.rollDice);
 
