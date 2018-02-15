@@ -1,7 +1,13 @@
 package phong.de.dontlie;
 
+import android.content.Intent;
+import android.support.design.widget.NavigationView;
+import android.support.v4.view.GravityCompat;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
@@ -12,7 +18,7 @@ import java.util.Random;
 
 import me.anwarshahriar.calligrapher.Calligrapher;
 
-public class DiceAnimationActivity extends AppCompatActivity implements View.OnClickListener {
+public class DiceAnimation extends AppCompatActivity implements View.OnClickListener, NavigationView.OnNavigationItemSelectedListener {
 
     public static final Random RANDOM = new Random();
     private Button rollDiceButton;
@@ -27,6 +33,15 @@ public class DiceAnimationActivity extends AppCompatActivity implements View.OnC
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dice_animation);
 
+        DrawerLayout drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this,
+                drawerLayout, null, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+        drawerLayout.addDrawerListener(toggle);
+        toggle.syncState();
+
+        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        navigationView.setNavigationItemSelectedListener(this);
+
         Calligrapher calligrapher = new Calligrapher(this);
         calligrapher.setFont(this, "fonts/Montserrat-Regular.otf", true);
 
@@ -40,12 +55,22 @@ public class DiceAnimationActivity extends AppCompatActivity implements View.OnC
     }
 
     @Override
+    public void onBackPressed() {
+        DrawerLayout drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
+        if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
+            drawerLayout.closeDrawer(GravityCompat.START);
+        } else {
+            super.onBackPressed();
+        }
+    }
+
+    @Override
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.rollDice:
-                final Animation anim1 = AnimationUtils.loadAnimation(DiceAnimationActivity.this, R.anim.shake);
-                final Animation anim2 = AnimationUtils.loadAnimation(DiceAnimationActivity.this, R.anim.shake);
-                final Animation anim3 = AnimationUtils.loadAnimation(DiceAnimationActivity.this, R.anim.shake);
+                final Animation anim1 = AnimationUtils.loadAnimation(DiceAnimation.this, R.anim.shake);
+                final Animation anim2 = AnimationUtils.loadAnimation(DiceAnimation.this, R.anim.shake);
+                final Animation anim3 = AnimationUtils.loadAnimation(DiceAnimation.this, R.anim.shake);
 
                 final Animation.AnimationListener animationListener = new Animation.AnimationListener() {
                     @Override
@@ -83,5 +108,19 @@ public class DiceAnimationActivity extends AppCompatActivity implements View.OnC
                 imageView2.startAnimation(anim2);
                 imageView3.startAnimation(anim3);
         }
+    }
+
+    @Override
+    public boolean onNavigationItemSelected(MenuItem item) {
+        int id = item.getItemId();
+
+        if (id == R.id.nav_intro){
+            Intent description = new Intent(DiceAnimation.this, GameDescription.class);
+            startActivity(description);
+        }
+
+        DrawerLayout drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
+        drawerLayout.closeDrawer(GravityCompat.START);
+        return true;
     }
 }

@@ -37,7 +37,7 @@ public class Introduction extends AppCompatActivity implements View.OnClickListe
                 break;
 
             case R.id.next_Button:
-                Intent diceRoll = new Intent(Introduction.this, DiceAnimationActivity.class);
+                Intent diceRoll = new Intent(Introduction.this, DiceAnimation.class);
                 startActivity(diceRoll);
 
             default:

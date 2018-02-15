@@ -13,7 +13,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Intent intent = new Intent(this, DiceAnimationActivity.class);
+        Intent intent = new Intent(this, DiceAnimation.class);
         startActivity(intent);
 
         Calligrapher calligrapher = new Calligrapher(this);

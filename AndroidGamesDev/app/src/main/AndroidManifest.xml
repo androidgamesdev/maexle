@@ -24,7 +24,8 @@
         <activity
             android:name=".Introduction"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-        <activity android:name=".DiceAnimationActivity"></activity>
+        <activity android:name=".DiceAnimation" />
+        <activity android:name=".GameDescription"></activity>
     </application>
 
 </manifest>

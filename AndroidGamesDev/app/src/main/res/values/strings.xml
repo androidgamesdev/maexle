@@ -52,4 +52,6 @@
         an.\nSobald ein Spieler keine Würfel mehr besitzt, muss er Shots gleich
         der Anzahl seiner Platzierung trinken (zB. 4ter muss 4 Shots trinken usw.).
     </string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
 </resources>
