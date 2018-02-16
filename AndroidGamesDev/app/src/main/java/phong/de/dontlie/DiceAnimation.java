@@ -34,6 +34,8 @@ public class DiceAnimation extends AppCompatActivity implements View.OnClickList
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dice_animation);
+        Calligrapher calligrapher = new Calligrapher(this);
+        calligrapher.setFont(this, "fonts/Montserrat-Regular.otf", true);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -49,8 +51,6 @@ public class DiceAnimation extends AppCompatActivity implements View.OnClickList
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        Calligrapher calligrapher = new Calligrapher(this);
-        calligrapher.setFont(this, "fonts/Montserrat-Regular.otf", true);
 
         rollDiceButton = (Button) findViewById(R.id.rollDices);
 
