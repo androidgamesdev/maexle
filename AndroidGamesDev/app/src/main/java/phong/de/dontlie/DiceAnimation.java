@@ -6,7 +6,9 @@ import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.os.Bundle;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.animation.Animation;
@@ -33,6 +35,11 @@ public class DiceAnimation extends AppCompatActivity implements View.OnClickList
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dice_animation);
 
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setHomeButtonEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         DrawerLayout drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this,
                 drawerLayout, null, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
@@ -45,7 +52,7 @@ public class DiceAnimation extends AppCompatActivity implements View.OnClickList
         Calligrapher calligrapher = new Calligrapher(this);
         calligrapher.setFont(this, "fonts/Montserrat-Regular.otf", true);
 
-        rollDiceButton = (Button) findViewById(R.id.rollDice);
+        rollDiceButton = (Button) findViewById(R.id.rollDices);
 
         imageView1 = (ImageView) findViewById(R.id.imageView1);
         imageView2 = (ImageView) findViewById(R.id.imageView2);
@@ -65,9 +72,24 @@ public class DiceAnimation extends AppCompatActivity implements View.OnClickList
     }
 
     @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.dice_menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+        if (id == R.id.action_settings) {
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    @Override
     public void onClick(View view) {
         switch (view.getId()) {
-            case R.id.rollDice:
+            case R.id.rollDices:
                 final Animation anim1 = AnimationUtils.loadAnimation(DiceAnimation.this, R.anim.shake);
                 final Animation anim2 = AnimationUtils.loadAnimation(DiceAnimation.this, R.anim.shake);
                 final Animation anim3 = AnimationUtils.loadAnimation(DiceAnimation.this, R.anim.shake);
@@ -114,7 +136,7 @@ public class DiceAnimation extends AppCompatActivity implements View.OnClickList
     public boolean onNavigationItemSelected(MenuItem item) {
         int id = item.getItemId();
 
-        if (id == R.id.nav_intro){
+        if (id == R.id.nav_intro) {
             Intent description = new Intent(DiceAnimation.this, GameDescription.class);
             startActivity(description);
         }

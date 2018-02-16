@@ -6,6 +6,6 @@
     <item
         android:id="@+id/nav_intro"
         android:icon="@drawable/intro"
-        android:title="Erklärung" />
+        android:title="@string/description" />
 
 </menu>

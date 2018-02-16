@@ -10,7 +10,7 @@ public class GameDescription extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game_description);
 
-        setTitle("Erklärung");
+        setTitle(R.string.description);
 //        getActionBar().setDisplayHomeAsUpEnabled(true);
     }
 }
